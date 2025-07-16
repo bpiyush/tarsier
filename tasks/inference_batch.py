@@ -74,7 +74,6 @@ def process_multiple_videos(model, processor, prompt, video_files, generate_kwar
     return captions
 
 
-
 if __name__ == "__main__":
     
     # Hyperparameters and configs
@@ -98,12 +97,14 @@ if __name__ == "__main__":
 
 
     # Debugging on a single video first
-    debug = False
+    debug = True
     if debug:
-        video_file = "assets/videos/coffee.gif"
-        process_single_video(
+        # video_file = "assets/videos/coffee.gif"
+        video_file = "/scratch/shared/beegfs/piyush/datasets/EPIC-Kitchens-100/P01_105_181.3_184.7.mp4"
+        caption = process_single_video(
             model, processor, prompt, video_file, generate_kwargs,
         )
+        import ipdb; ipdb.set_trace()
 
         # Test on a batch of videos
         video_files = [
